@@ -89,6 +89,11 @@ Indica qué proporción de la variabilidad en los datos es explicada por el mode
 
 * Versión Prophet: en esta versión de la notebook se utilizó el modelo de series temporales Prophet con el dataset prod_encoded_df(2), el cual tuvo un buen desempeño para la predicción de producción de petróleo y gas mensual, manteniendo errores relativamente bajos tanto en términos absolutos como relativos. La métrica calculada en este caso es el error medio absoluto porcentual que nos dió en este caso 7,22%, esto indica que Prophet está capturando adecuadamente la tendencia de la producción.
 
+* Versión con transformacion logarítmica: se decidió aplicar este modelo a la variable dependiente debido a que, en la preentrega 2, se detectó que presentaba una distribución sesgada hacia la izquierda. En estadística, la transformación logarítmica es una práctica recomendada para mejorar la simetría de variables sesgadas, reducir el impacto de valores extremos (outliers) y favorecer el cumplimiento de los supuestos de modelos como regresión lineal, XGBoost y Random Forest. Aunque estos últimos no la requieren, la transformación puede estabilizar las predicciones al mejorar la normalidad y la homocedasticidad del error. En este caso, el coeficiente de determinación (R²) fue del 68 %.
+
+* Versión con rango intercuartílico: se aplicó este método para detectar y eliminar outliers en una variable numérica. El objetivo fue limpiar datos extremos que podían distorsionar el análisis y afectar negativamente el rendimiento de los modelos predictivos. En este caso, el coeficiente de determinación (R²) fue del  %.
+
+
 # Herramientas utilizadas 
 
 Lenguaje: Python 3.10+
