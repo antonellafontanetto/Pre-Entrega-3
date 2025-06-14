@@ -85,7 +85,9 @@ Indica qué proporción de la variabilidad en los datos es explicada por el mode
 
 * Versión con outliers: se decidió aplicar los diferentes modelos anteriores para el dataframe completo con outliers y así analizar cuales fueron los resultados de las métricas. En este caso el coeficiente de determinación resultó ser de 60% lo que indica que debería reajustarse el modelo ya que no es un resultado óptimo para predecir la proyección futura de la producción de petróleo y gas.
 
-* Versión con datos agrupados: 
+* Versión con datos agrupados: para esta versión se trabajó con un un dataset con los datos agrupados por mes de la producción de petróleo y gas (prod_encoded_dg(2)) y de esta manera se aplicaron todos los modelos de aprendizaje supervisado. En este caso para el modelo XGBoost optimizado con  Gridsearch se obtuvo un coeficiente de determinación del 96,66 %, es decir, con Gridsearch el modelo mejora significativamente, el modelo es más preciso y confiable.
+
+* Versión Prophet: en esta versión de la notebook se utilizó el modelo de series temporales Prophet, el cual tuvo un buen desempeño para la predicción de producción de petróleo y gas mensual, manteniendo errores relativamente bajos tanto en términos absolutos como relativos. La métrica calculada en este caso es el error medio absoluto porcentual que nos dió en este caso 7,22%, esto indica que Prophet está capturando adecuadamente la tendencia de la producción.
 
 # Herramientas utilizadas 
 
