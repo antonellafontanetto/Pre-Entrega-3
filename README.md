@@ -62,27 +62,30 @@ Los modelos utilizados fueron:
 
 * Regresión Lineal: La regresión lineal es un modelo supervisado que predice un valor numérico continuo a partir de una o más variables independientes, asumiendo una relación lineal entre ellas. Su función principal es estimar la tendencia de los datos y realizar predicciones cuantitativas.
 
-* Random Forest: Random Forest es un modelo supervisado basado en múltiples árboles de decisión que trabajan en conjunto para mejorar la precisión y evitar el sobreajuste. Funciona combinando las predicciones de varios árboles para obtener un resultado más robusto y confiable.
+* Random Forest: Es un modelo supervisado basado en múltiples árboles de decisión que trabajan en conjunto para mejorar la precisión y evitar el sobreajuste. Funciona combinando las predicciones de varios árboles para obtener un resultado más robusto y confiable.
 
 * Support Vector Machine: es un modelo supervisado que busca encontrar el hiperplano óptimo que separa las clases en un espacio de características. Es especialmente eficaz en problemas de clasificación, incluso cuando los datos no son linealmente separables.
 
-* XGBoost: XGBoost es un modelo supervisado de tipo boosting que construye árboles de decisión de manera secuencial para mejorar el rendimiento en cada iteración. Es altamente eficiente, preciso y muy utilizado en competencias y proyectos de machine learning por su capacidad para manejar grandes volúmenes de datos y prevenir el sobreajuste.
+* XGBoost: Es un modelo supervisado de tipo boosting que construye árboles de decisión de manera secuencial para mejorar el rendimiento en cada iteración. Es altamente eficiente, preciso y muy utilizado en competencias y proyectos de machine learning por su capacidad para manejar grandes volúmenes de datos y prevenir el sobreajuste.
 
-* Prophet: es un modelo supervisado desarrollado por Facebook para realizar pronósticos de series temporales de forma automática y precisa. Es ideal para datos con tendencias, estacionalidades y eventos especiales, y permite a usuarios no expertos hacer predicciones fácilmente.
+* Prophet: Es un modelo supervisado desarrollado por Facebook para realizar pronósticos de series temporales de forma automática y precisa. Es ideal para datos con tendencias, estacionalidades y eventos especiales, y permite a usuarios no expertos hacer predicciones fácilmente.
 
 Además por cada modelo se implementó la utilización y cálculo de métricas para corroborar que tan bien el modelo podía predecir nuestro objetivo. Las métricas utilizadas fueron:
 
 * MAE (Error Absoluto Medio):
-Mide el promedio de las diferencias absolutas entre los valores reales y los predichos.
-Indica cuánto se equivoca en promedio el modelo, sin considerar la dirección del error.
+Mide el promedio de las diferencias absolutas entre los valores reales y los predichos. Indica cuánto se equivoca en promedio el modelo, sin considerar la dirección del error.
 
 * MSE (Error Cuadrático Medio):
-Calcula el promedio de los errores al cuadrado entre valores reales y predichos.
-Penaliza más los errores grandes, siendo útil para detectar desviaciones fuertes.
+Calcula el promedio de los errores al cuadrado entre valores reales y predichos. Penaliza más los errores grandes, siendo útil para detectar desviaciones fuertes.
 
 * R² (Coeficiente de determinación):
-Indica qué proporción de la variabilidad en los datos es explicada por el modelo.
-Un valor cercano a 1 significa que el modelo ajusta bien los datos.
+Indica qué proporción de la variabilidad en los datos es explicada por el modelo. Un valor cercano a 1 significa que el modelo ajusta bien los datos.
+
+# Breve análisis de cada versión estudiada
+
+* Versión con outliers: se decidió aplicar los diferentes modelos anteriores para el dataframe completo con outliers y así analizar cuales fueron los resultados de las métricas. En este caso el coeficiente de determinación resultó ser de 60% lo que indica que debería reajustarse el modelo ya que no es un resultado óptimo para predecir la proyección futura de la producción de petróleo y gas.
+
+* Versión con datos agrupados: 
 
 # Herramientas utilizadas 
 
