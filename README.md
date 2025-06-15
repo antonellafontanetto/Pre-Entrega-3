@@ -83,15 +83,15 @@ Indica qué proporción de la variabilidad en los datos es explicada por el mode
 
 # Breve análisis de cada versión estudiada
 
-* Versión con outliers: se decidió aplicar los diferentes modelos anteriores para el dataframe completo con outliers (prod_encoded_df) y así analizar cuales fueron los resultados de las métricas. En este caso el coeficiente de determinación resultó ser de 60% lo que indica que debería reajustarse el modelo ya que no es un resultado óptimo para predecir la proyección futura de la producción de petróleo y gas.
+* Versión con outliers: se decidió aplicar los diferentes modelos anteriores para el dataframe completo con outliers (prod_encoded_df) y así analizar cuales fueron los resultados de las métricas. En este caso el coeficiente de determinación (R²) resultó ser de 60% lo que indica que debería reajustarse el modelo ya que no es un resultado óptimo para predecir la proyección futura de la producción de petróleo y gas.
 
-* Versión con datos agrupados: para esta versión se trabajó con un un dataset con los datos agrupados por mes de la producción de petróleo y gas (prod_encoded_df(2)) y de esta manera se aplicaron todos los modelos de aprendizaje supervisado. En este caso para el modelo XGBoost optimizado con  Gridsearch se obtuvo un coeficiente de determinación del 96,66 %, es decir, con Gridsearch el modelo mejora significativamente, el modelo es más preciso y confiable.
+* Versión con datos agrupados: para esta versión se trabajó con un un dataset con los datos agrupados por mes de la producción de petróleo y gas (prod_encoded_df(2)) y de esta manera se aplicaron todos los modelos de aprendizaje supervisado. En este caso para el modelo XGBoost optimizado con  Gridsearch se obtuvo un coeficiente de determinación del (R²) 96,66 %, es decir, con Gridsearch el modelo mejora significativamente, el modelo es más preciso y confiable.
 
 * Versión Prophet: en esta versión de la notebook se utilizó el modelo de series temporales Prophet con el dataset prod_encoded_df(2), el cual tuvo un buen desempeño para la predicción de producción de petróleo y gas mensual, manteniendo errores relativamente bajos tanto en términos absolutos como relativos. La métrica calculada en este caso es el error medio absoluto porcentual que nos dió en este caso 7,22%, esto indica que Prophet está capturando adecuadamente la tendencia de la producción.
 
 * Versión con transformacion logarítmica: se decidió aplicar este modelo a la variable dependiente debido a que, en la preentrega 2, se detectó que presentaba una distribución sesgada hacia la izquierda. En estadística, la transformación logarítmica es una práctica recomendada para mejorar la simetría de variables sesgadas, reducir el impacto de valores extremos (outliers) y favorecer el cumplimiento de los supuestos de modelos como regresión lineal, XGBoost y Random Forest. Aunque estos últimos no la requieren, la transformación puede estabilizar las predicciones al mejorar la normalidad y la homocedasticidad del error. En este caso, el coeficiente de determinación (R²) fue del 68 %.
 
-* Versión con rango intercuartílico: se aplicó este método para detectar y eliminar outliers en una variable numérica. El objetivo fue limpiar datos extremos que podían distorsionar el análisis y afectar negativamente el rendimiento de los modelos predictivos. En este caso, el coeficiente de determinación (R²) fue del  %.
+* Versión con rango intercuartílico: se aplicó este método para detectar y eliminar outliers en una variable numérica. El objetivo fue limpiar datos extremos que podían distorsionar el análisis y afectar negativamente el rendimiento de los modelos predictivos. En este caso, el coeficiente de determinación (R²) fue del 66 %.
 
 
 # Herramientas utilizadas 
